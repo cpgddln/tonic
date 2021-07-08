@@ -172,7 +172,7 @@ impl<T> Request<T> {
         *request.version_mut() = http::Version::HTTP_2;
         *request.method_mut() = http::Method::POST;
         *request.uri_mut() = uri;
-        *request.headers_mut() = self.metadata.into_sanitized_headers();
+        *request.headers_mut() = self.metadata.into_headers();
         *request.extensions_mut() = self.extensions.into_http();
 
         request
